@@ -2,7 +2,6 @@
 <div class="main users-new">
   <div class="container">
     <h1 class="form-heading">新規登録</h1>
-
     <div class="form">
       <div class="form-body">
         <%= form_tag("/users/create") do %>
@@ -10,9 +9,14 @@
             <input name="name" >
           <p>メールアドレス</p>
             <input name="email" >
-            <input type="submit" name="" value="登録">
-        <% end %>
+            <p>パスワード</P>
+            <input type="password" name="password">
+            <input type="submit" name="" value="登録">        <% end %>
       </div>
+      <%= form_for @post do |f| %>
+  <%= f.file_field :image %>
+  <%= f.submit 'アップロードする'%>
+<% end %>
     </div>
   </div>
 </div>
